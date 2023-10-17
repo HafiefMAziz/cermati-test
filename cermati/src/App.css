@@ -1,0 +1,312 @@
+.App {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.row-banner {
+  width: 100%;
+  height: 55%;
+  position: relative;
+}
+
+.row-highlight {
+  height: 40%;
+  width: 100%;
+  background-color: rgb(229, 229, 229);
+  padding: 20px 10px 20px 10px;
+  position: relative;
+}
+
+.row-footer {
+  height: 5%;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(17, 0, 92);
+  color: lightsteelblue;
+  position: relative;
+}
+
+.logo-banner {
+  margin-top: 30px;
+  margin-left: 30px;
+  height: 70px;
+}
+
+.img-banner {
+  background-image: linear-gradient(
+      rgba(0, 44, 94, 0.65),
+      rgba(0, 44, 94, 0.65)
+    ),
+    url("./assets/work-desk__dustin-lee.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 700px;
+}
+
+.text-banner {
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin: auto;
+}
+
+.text-banner-name {
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+.text-banner-subtitle {
+  font-size: 50px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.text-banner-subtitle-2 {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+.btn-contact {
+  border: solid;
+  border-radius: 4px;
+  border-color: white;
+  background-color: transparent;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 550;
+  height: 80px;
+  width: 300px;
+  font-size: 20px;
+}
+
+.btn-contact:hover {
+  color: rgba(0, 0, 0);
+  cursor: pointer;
+  background-color: white;
+  mix-blend-mode: screen;
+}
+
+.row-highlight-title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 60%;
+}
+
+.highlight-title {
+  font-size: 50px;
+}
+
+.highlight-subtitle {
+  font-size: 30px;
+}
+
+.row-highlight-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 20px;
+}
+
+.card {
+  max-width: 350px;
+  border: solid;
+  padding: 15px 15px 15px 15px;
+}
+
+.card-title {
+  display: flex;
+  font-size: 30px;
+  object-position: right center;
+  padding: 10px 0 10px 0;
+}
+
+.card-title p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.card-icon {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.footer-text {
+  text-align: center;
+  padding: 2rem 0;
+  justify-content: center;
+}
+
+.notif-panel{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 10%;
+  background-color: rgb(229, 229, 229);
+  width: 100%;
+  z-index: 1;
+}
+.notif-content{
+  margin: auto;
+  width: 45%;
+  display: flex;
+  gap: 20px 20px;
+  font-size: 20px;
+}
+.notif-content span{
+  color: rgb(0, 123, 193);
+}
+.notif-content button{
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 40px;
+  width: 150px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(0, 123, 193);
+}
+
+.news-panel{
+  position: fixed;
+  color: white;
+  bottom : 0;
+  height: 200px;
+  background-color:rgba(0, 44, 94, 0.65);
+  width: 40%;
+  z-index: 1;
+}
+.btn-x{
+  background-color: transparent;
+  border: none;
+  margin-top: 5px;
+  margin-left: auto;
+  float: right;
+}
+.news-content{
+  padding: 10px 10px 10px 10px;
+  display: grid;
+  font-size: 15px;
+}
+
+.input-panel{
+  display: flex;
+  justify-content: space-between;
+}
+.input-panel input{
+  width: 70%;
+}
+.input-panel button{
+  border-radius: 4px;
+  color: white;
+  border: none;
+  background-color: rgb(255, 128, 0);
+  width: 20%;
+}
+
+@media only screen and (max-width: 1279px) {
+  .news-panel{
+    width: 70%;
+  }
+  .notif-content{
+    width: 75%;
+  }
+  .img-banner {
+    height: 700px;
+  }
+  .highlight-title{
+    font-size: 30px;
+  }
+  .highlight-subtitle{
+    font-size: 20px;
+  }
+  .card{
+    max-width: 300px;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .news-panel{
+    width: 80%;
+  }
+  .notif-content{
+    font-size: 15px;
+    width: 85%;
+  }
+  .notif-content button{
+    width: 150px;
+  }
+  .row-highlight-title {
+    width: 80%;
+  }
+  .img-banner {
+    height: 600px;
+  }
+  .text-banner-name {
+    font-size: 35px;
+  }
+  .text-banner-subtitle {
+    font-size: 35px;
+  }
+  .text-banner-subtitle-2 {
+    font-size: 20px;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+  .news-panel{
+    width: 100%;
+    height: 300px;
+  }
+  .input-panel{
+    display: block;
+  }
+  .input-panel input{
+    margin-bottom: 10px;
+    width: 98%;
+  }
+  .input-panel button{
+    height: 30px;
+    width: 100%;
+  }
+  .notif-content{
+    width: 95%;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom:20px;
+  }
+  .notif-content button{
+    width: 70px;
+  }
+  .btn-contact {
+    height: 60px;
+    width: 250px;
+  }
+  .row-highlight-title {
+    width: 100%;
+  }
+  .img-banner {
+    height: 700px;
+  }
+  .text-banner-name {
+    font-size: 35px;
+  }
+  .text-banner-subtitle {
+    font-size: 35px;
+  }
+  .text-banner-subtitle-2 {
+    font-size: 20px;
+  }
+
+}
+
+
+
