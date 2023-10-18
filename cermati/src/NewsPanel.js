@@ -20,8 +20,8 @@ function NewsPanel({ setDisplayNews }) {
           to my newsletter to get them all.
         </p>
         <div className="input-panel">
-            <input></input>
-            <button placeholder="Email address">Count Me In!</button>
+            <input type="email" placeholder="Email address"/>
+            <button>Count Me In!</button>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,9 +14,21 @@ import NewsPanel from "./NewsPanel";
 
 function App() {
   const [notifPanel, setNotifPanel] = useState(true);
-  const [newsPanel, setNewsPanel] = useState(true);
+  const [newsPanel, setNewsPanel] = useState(false);
   const displayNotif = (state) => setNotifPanel(state);
   const displayNews = (state) => setNewsPanel(state);
+  const handleScroll = () => {
+    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+      setNewsPanel(true)
+  }
+  };
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
