@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faXmark,
-  } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-function NewsPanel({ setDisplayNews }) {
+function NewsPanel() {
+  const [displayNews, setDisplayNews] = useState(false);
+  const [close, setClose] = useState(false)
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+      setDisplayNews(true);
+    }
+  };
   const handleDisplay = () => {
-    setDisplayNews(false);
+    setClose(true);
   };
   return (
-    <div className="news-panel">
+    <div className={`news-panel ${displayNews ? "show" : "hidden"} ${close ? "close" : " "}`}>
       <div className="news-content">
-      <button className="btn-x"onClick={handleDisplay}><FontAwesomeIcon icon={faXmark} /></button>
+        <button className="btn-x" onClick={handleDisplay}>
+          <FontAwesomeIcon icon={faXmark} />
+        </button>
         <h2>Get latest updates in web technologies.</h2>
         <p>
           I write articles related to web technologies, such as design trends,
@@ -20,8 +35,8 @@ function NewsPanel({ setDisplayNews }) {
           to my newsletter to get them all.
         </p>
         <div className="input-panel">
-            <input type="email" placeholder="Email address"/>
-            <button>Count Me In!</button>
+          <input type="email" placeholder="Email address" />
+          <button>Count Me In!</button>
         </div>
       </div>
     </div>

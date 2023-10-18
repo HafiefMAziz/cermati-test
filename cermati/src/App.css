@@ -17,7 +17,7 @@
   height: 40%;
   width: 100%;
   background-color: rgb(229, 229, 229);
-  padding: 20px 10px 20px 10px;
+  padding: 20px 10px 70px 10px;
   position: relative;
 }
 
@@ -112,6 +112,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px 20px;
+  margin-top: 70px;
 }
 
 .card {
@@ -153,6 +154,21 @@
   width: 100%;
   z-index: 1;
 }
+.hide{
+  animation: slideUp 0.5s ease-in-out forwards;
+}
+@keyframes slideUp {
+  0% { 
+    position: fixed;
+    transform: translateY(0); 
+  }
+  100% { 
+    position: fixed;
+    transform: translateY(-100%);
+    display: none; 
+  }
+}
+
 .notif-content{
   margin: auto;
   width: 45%;
@@ -184,6 +200,7 @@
   z-index: 1;
 }
 .btn-x{
+  color: white;
   background-color: transparent;
   border: none;
   margin-top: 5px;
@@ -209,6 +226,36 @@
   border: none;
   background-color: rgb(255, 128, 0);
   width: 20%;
+}
+.hidden{
+  display: none;
+}
+.show{
+  animation: slideUpNews 1s ease-in-out forwards;
+  display: block;
+}
+@keyframes slideUpNews {
+  0% { 
+    position: fixed;
+    transform: translateY(100%); 
+  }
+  100% { 
+    position: fixed;
+    transform: translateY(0);
+  }
+}
+.close{
+  animation: closeNews 1s ease-in-out forwards;
+}
+@keyframes closeNews {
+  0% { 
+    position: fixed;
+    transform: translateY(0); 
+  }
+  100% { 
+    position: fixed;
+    transform: translateY(100%);
+  }
 }
 
 @media only screen and (max-width: 1279px) {

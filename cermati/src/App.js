@@ -13,27 +13,12 @@ import NotifPanel from "./NotifPanel";
 import NewsPanel from "./NewsPanel";
 
 function App() {
-  const [notifPanel, setNotifPanel] = useState(true);
-  const [newsPanel, setNewsPanel] = useState(false);
-  const displayNotif = (state) => setNotifPanel(state);
-  const displayNews = (state) => setNewsPanel(state);
-  const handleScroll = () => {
-    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-      setNewsPanel(true)
-  }
-  };
-  useEffect(() => {
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const [name, setName] = useState("Hafief Maulana Aziz")
 
   return (
     <>
-      {notifPanel ? <NotifPanel setDisplayNotif={displayNotif} /> : null}
       <div className="App">
+      <NotifPanel/>
         <div className="row-banner">
           <div className="img-banner">
             <img
@@ -42,7 +27,7 @@ function App() {
               alt=""
             ></img>
             <div className="text-banner">
-              <p className="text-banner-name">Hello! I'm Hafief Maulana Aziz</p>
+              <p className="text-banner-name">Hello! I'm {name}</p>
               <p className="text-banner-subtitle">
                 Consult, Design, and Develop Websites
               </p>
@@ -157,10 +142,10 @@ function App() {
         </div>
         <div className="row-footer">
           <div className="footer-text">
-            © 2018 Hafief Maualana Aziz. All rights reserved.
+            © 2023 {name}. All rights reserved.
           </div>
         </div>
-        {newsPanel ? <NewsPanel setDisplayNews={displayNews} /> : null}
+        <NewsPanel/>
       </div>
     </>
   );
